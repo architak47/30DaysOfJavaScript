@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dom Manupulation</title>
+    <title>DOM Manipulation</title>
+    <style>
+        .resized-image {
+            width: 200px;
+            height: auto;
+        }
+        .new-class {
+            background-color: yellow;
+            color: #fff;
+        }
+        .lorem {
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
     <h1 id="name">Hello Archit</h1>
@@ -12,6 +25,8 @@
     <div class="cls">Content goes here</div>
     <div class="lorem">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias commodi nihil repellendus.</div>
 
+    <img id="myImage" src="https://unsplash.com/photos/a-person-sitting-in-front-of-a-laptop-computer-MSfUkIU8pGM" style="height: 150px;" alt="Original Image">
+
     <ul id="myList">
         <li class="li">Item 1</li>
         <li class="li">Item 2</li>
@@ -19,9 +34,11 @@
     <button id="addList">Add New Item</button>
     <button id="remove">Remove Lorem</button>
     <button id="removeLast">Remove Last List Item</button>
+    <button id="toggleClassButton">Toggle Class</button>
 
     <script src="manipulate.js"></script>
     <script src="append.js"></script>
     <script src="remove.js"></script>
+    <script src="modify.js"></script>
 </body>
 </html>
