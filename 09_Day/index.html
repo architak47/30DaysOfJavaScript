@@ -16,6 +16,10 @@
         .lorem {
             background-color: red;
         }
+        .mouseover-border {
+            border: 2px solid black;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -31,6 +35,13 @@
         <li class="li">Item 1</li>
         <li class="li">Item 2</li>
     </ul>
+
+    <p id="paragraph">This is a paragraph.</p>
+    <button id="changeTextButton">Change Paragraph Text</button>
+
+    <div id="mouseoverElement" class="mouseover-border">Hover over this element</div>
+
+
     <button id="addList">Add New Item</button>
     <button id="remove">Remove Lorem</button>
     <button id="removeLast">Remove Last List Item</button>
@@ -40,5 +51,6 @@
     <script src="append.js"></script>
     <script src="remove.js"></script>
     <script src="modify.js"></script>
+    <script src="eventHandling.js"></script>
 </body>
 </html>
