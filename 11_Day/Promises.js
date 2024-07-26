@@ -7,9 +7,10 @@ const promise1 = new Promise((resolve, reject) => {
     }, 2000);
 })
 
-promise1.then((message) =>{
-    console.log(message);
-})
+// promise1.then((message) =>{
+//     console.log(message);
+// })
+
 .catch((message) => {
     console.log('Promise Rejected');
 })
@@ -23,9 +24,9 @@ const promise2 = new Promise((resolve, reject) =>{
     }, 2000)
 })
 
-promise2.then((message) =>{
-    console.log(message);
-})
+// promise2.then((message) =>{
+//     console.log(message);
+// })
 .catch((message) => {
     console.log(message);
 })
@@ -52,17 +53,57 @@ const fetchData3 = new Promise((resolve, reject) => {
     }, 3000);
 });
 
-fetchData1
-    .then((data1) => {
-        console.log(data1);
-        return fetchData2;
+// fetchData1
+//     .then((data1) => {
+//         console.log(data1);
+//         return fetchData2;
+//     })
+//     .then((data2) => {
+//         console.log(data2);
+//         return fetchData3;
+//     })
+//     .then((data3) => {
+//         console.log(data3);
+//     })
+//     .catch((error) => {
+//         console.error('An error occurred:', error);
+//     });
+
+
+// Activity 5: Concurrent Promises
+// Task 1: Use Promise.all to wait for multiple promises to resolve and then log all their vlaues.
+
+const promise3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Promise 1 Resolved of all');
+    }, 1000);
+})
+
+const promise4 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Promise 2 Resolved of all');
+    }, 2000);
+})
+
+const promise5 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Promise 3 Resolved of all');
+    }, 3000);
+})
+
+// Task 2: Use Promise.race to log the value of the first promise that resolves among multiple promises.
+
+Promise.all([promise3, promise4, promise5])
+    .then((result) => {
+        console.log(result);
     })
-    .then((data2) => {
-        console.log(data2);
-        return fetchData3;
-    })
-    .then((data3) => {
-        console.log(data3);
+    .catch((error) => {
+        console.error('An error occurred:', error);
+    });
+
+    Promise.race([promise3, promise4, promise5])
+    .then((result) => {
+        console.log(result);
     })
     .catch((error) => {
         console.error('An error occurred:', error);
